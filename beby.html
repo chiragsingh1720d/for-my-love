@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Tanu darling ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .heart {
+            font-size: 35px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            50% { transform: scale(1.25); }
+        }
+
+        button {
+            background: #fff;
+            color: #e91e63;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 25px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #letter {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #8e2455;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 30px;
+            line-height: 1.8;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -40px;
+            animation: floatUp 6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-110vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart">❤️ 💗 ❤️</div>
+
+        <h1>I Love You, Tanu!</h1>
+
+        <p>meri jaan ke liye chota sa surprise. 🥹💕</p>
+        <p>tumhare liye banaya hu pasand aaye tho batana...</p>
+
+        <button onclick="openLetter()">
+            Open Your Surprise 💌
+        </button>
+
+        <div id="letter">
+            <h2>Meri pyari tanu ❤️</h2>
+
+            <p>
+                Beby tumse bahut pyar karta hu beta tu meri jaan hai aur aaj tere liye kuch 
+                bana bana raha hu.
+            </p>
+
+            <p>
+                meri babu kaash aaj ham sath mai hote bahut maja karte lekin koi nahi
+                mere par jyada gussa mat kiya karo please thoda pyar bhi karliya karo 
+            </p>
+
+            <p>
+                i love you beby meri shona ummah ummah ummah ummah
+            </p>
+
+            <p>
+                You are special to me, Beby. ❤️
+            </p>
+
+            <h3>Forever sending you love 💋❤️</h3>
+            <p>— Your Chirag 💌</p>
+        </div>
+
+        <footer>Made with ❤️ just for Beby</footer>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById("letter").style.display = "block";
+
+            for (let i = 0; i < 25; i++) {
+                createHeart();
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "floating-heart";
+            heart.textContent = ["❤️", "💗", "💕", "💖"][
+                Math.floor(Math.random() * 4)
+            ];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (18 + Math.random() * 25) + "px";
+            heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 7000);
+        }
+
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>
